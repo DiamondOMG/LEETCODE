@@ -9,19 +9,8 @@
     print(two_pointer([2, 3, 4], 6))        # ➝ [0, 2]
     print(two_pointer([2, 3, 4], 8))        # ➝ []
 """
-def two_pointer(nums:list[int],target:int)->list[int]:
-    L = 0
-    R = len(nums)-1
-    while nums[L] + nums[R] != target:
-        if target < nums[L] or L > len(nums)-1:
-            return "Not found"
-        if nums[L] + nums[R] > target:
-            R -=1
-        if nums[L] + nums[R] < target:
-            L +=1
-    return [L,R]
 
-def two_pointer2(nums:list[int],target:int)->list[int]:
+def two_pointer(nums:list[int],target:int)->list[int]:
     L = 0
     R = len(nums)-1
     while L < R:
@@ -35,4 +24,28 @@ def two_pointer2(nums:list[int],target:int)->list[int]:
     return []
 
 
-print(two_pointer([1, 2, 3, 4, 6], 6))
+#print(two_pointer([1, 2, 3, 4, 6], 6))
+
+"""
+    โจทย์:
+    ให้ nums เป็น list ของจำนวนเต็มที่เรียงจากน้อยไปมาก (อาจมีค่าติดลบได้)
+    เขียนฟังก์ชันคืนค่า list ของ ค่ากำลังสองทั้งหมด แล้วเรียงจากน้อยไปมาก
+
+    ตัวอย่าง Input/Output:
+
+    Input: [-4, -1, 0, 3, 10]  
+    Output: [0, 1, 9, 16, 100]  
+
+    Input: [-7, -3, 2, 3, 11]  
+    Output: [4, 9, 9, 49, 121]  
+
+
+    ใช้ two pointer เพื่อทำให้ได้ O(n) ไม่ใช่ O(n log n)
+"""
+
+def two_pointer2(nums:list[int])->list[int]:
+    L = 0
+    R = len(nums)-1
+    return []
+
+print(two_pointer([-4, -1, 0, 3, 10]))
