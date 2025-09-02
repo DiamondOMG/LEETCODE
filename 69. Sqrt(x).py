@@ -1,0 +1,26 @@
+def mySqrt(x: int) -> int:
+    i=1
+    while i*i <= x :
+        if i*i==x:
+            return i
+        if i*i < x <(i+1)*(i+1):
+            return i
+        i+=1
+
+def mySqrt2(x: int) -> int:
+    if x < 2:
+        return x
+
+    left, right = 1, x // 2
+    while left <= right:
+        mid = (left + right) // 2
+        if mid * mid == x:
+            return mid
+        elif mid * mid < x:
+            left = mid + 1
+        else:
+            right = mid - 1
+    return right
+
+
+print(mySqrt(25))
