@@ -48,4 +48,54 @@ def two_pointer2(nums:list[int])->list[int]:
     R = len(nums)-1
     return []
 
-print(two_pointer([-4, -1, 0, 3, 10]))
+##print(two_pointer([-4, -1, 0, 3, 10]))
+
+    """โจทย์ 3:
+
+ให้ nums เป็น list ของจำนวนเต็มที่เรียงจากน้อยไปมาก
+เขียนฟังก์ชันหาคู่ (i, j) ทั้งหมด ที่ทำให้ nums[i] + nums[j] < target และคืนค่า จำนวนคู่ที่เป็นไปได้
+
+ตัวอย่าง Input/Output:
+
+Input: nums = [-1, 1, 2, 3], target = 3  
+Output: 5   # คู่ที่เป็นไปได้คือ (-1,1), (-1,2), (-1,3), (1,2), (1,3)
+    """
+def two_pointer3(nums:list[int],target:int)->int:
+    L=0
+    R=len(nums)-1
+    count=0
+    while L < R :
+        if nums[L]+nums[R] < target:
+            count= count + R - L
+            L+=1
+        if nums[L]+nums[R] >= target:
+            R-=1
+    return count
+
+#print(two_pointer3([-1, 1, 2, 3],4))
+def three_sum(nums: list[int]) -> list[list[int]]:
+    nums.sort()
+    n = len(nums)
+    res = []
+    for i in range(n-2):
+        if i > 0 and nums[i] == nums[i-1]:
+            continue
+        L, R = i + 1, n - 1
+        target = -nums[i]
+        while L < R:
+            s = nums[L] + nums[R]
+            if s == target:
+                res.append([nums[i], nums[L], nums[R]])
+                L += 1; R -= 1
+                while L < R and nums[L] == nums[L-1]: L += 1
+                while L < R and nums[R] == nums[R+1]: R -= 1
+            elif s < target:
+                L += 1
+            else:
+                R -= 1
+    return res
+
+# ตัวอย่าง
+#print(three_sum([-1,0,1,2,-1,-4]))  
+
+
