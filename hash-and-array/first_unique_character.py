@@ -11,10 +11,14 @@ def first_unique_character(s: str) -> int:
     
     # 1. นับความถี่ของตัวอักษรแต่ละตัว
     for ch in s:
-        char_count[ch] = char_count.get(ch, 0) + 1
+        if ch not in char_count:
+            char_count[ch] = 1
+        else:
+            char_count[ch] += 1
         
     # 2. วนลูปหาตัวแรกที่ความถี่เป็น 1
-    for i, ch in enumerate(s):
+    for i in range(len(s)):
+        ch = s[i]
         if char_count[ch] == 1:
             return i
             
