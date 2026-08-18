@@ -7,8 +7,14 @@ Find that single one.
 """
 
 def single_number(nums: list[int]) -> int:
-    # TODO: เขียนโค้ดตรงนี้
-    pass
+    res = set()
+    for num in nums:
+        if num not in res:
+            res.add(num)
+        else:
+            res.remove(num)
+    
+    return res.pop()
 
 # Test cases
 print(single_number([2, 2, 1]))       # Expected: 1
