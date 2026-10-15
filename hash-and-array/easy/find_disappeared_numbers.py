@@ -4,6 +4,10 @@ LeetCode 448: Find All Numbers Disappeared in an Array
 Problem:
 Given an array nums of n integers where nums[i] is in the range [1, n],
 return an array of all the integers in the range [1, n] that do not appear in nums.
+
+โจทย์:
+กำหนดอาร์เรย์ nums ที่มีจำนวนเต็ม n ตัว โดยแต่ละตัวมีค่าอยู่ในช่วง [1, n]
+ให้คืนรายการตัวเลขทั้งหมดในช่วง [1, n] ที่ไม่ปรากฏใน nums
 """
 
 def find_disappeared_numbers(nums: list[int]) -> list[int]:
@@ -32,4 +36,7 @@ def find_disappeared_numbers2(nums: list[int]) -> list[int]:
             res.append(i)
     return res
 
-print(find_disappeared_numbers2([4, 3, 2, 7, 8, 2, 3, 1])) 
+print(find_disappeared_numbers2([4, 3, 2, 7, 8, 2, 3, 1])) # Expected: [5, 6]
+print(find_disappeared_numbers2([1, 1]))                 # Expected: [2]
+print(find_disappeared_numbers2([1, 2, 3]))              # Expected: []
+print(find_disappeared_numbers2([2, 2]))                 # Expected: [1] 

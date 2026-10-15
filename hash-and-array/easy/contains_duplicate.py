@@ -4,6 +4,10 @@ LeetCode 217: Contains Duplicate
 Problem:
 Given an integer array nums, return True if any value appears at least twice in the array,
 and return False if every element is distinct.
+
+โจทย์:
+กำหนดอาร์เรย์จำนวนเต็ม nums ให้คืนค่า True หากมีตัวเลขใดปรากฏอย่างน้อย 2 ครั้ง
+และคืนค่า False หากตัวเลขทุกตัวไม่ซ้ำกัน
 """
 
 def contains_duplicate(nums: list[int]) -> bool:
@@ -18,3 +22,4 @@ def contains_duplicate(nums: list[int]) -> bool:
 print(contains_duplicate([1, 2, 3, 1]))       # Expected: True
 print(contains_duplicate([1, 2, 3, 4]))       # Expected: False
 print(contains_duplicate([1, 1, 1, 3, 3, 4])) # Expected: True
+print(contains_duplicate([]))                  # Expected: False

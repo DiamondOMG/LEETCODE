@@ -4,6 +4,10 @@ LeetCode 387: First Unique Character in a String
 Problem:
 Given a string s, find the first non-repeating character in it and return its index.
 If it does not exist, return -1.
+
+โจทย์:
+กำหนดสตริง s ให้หาตัวอักษรตัวแรกที่ปรากฏเพียงครั้งเดียว แล้วคืนตำแหน่งของตัวอักษรนั้น
+หากไม่มี ให้คืนค่า -1
 """
 
 def first_unique_character(s: str) -> int:
@@ -45,4 +49,5 @@ def first_unique_character2 (s : str)-> int:
 
 print(first_unique_character2("leetcode"))     # Expected: 0
 print(first_unique_character2("loveleetcode")) # Expected: 2
-print(first_unique_character2("aabb"))    
+print(first_unique_character2("aabb"))         # Expected: -1
+print(first_unique_character2("z"))             # Expected: 0    
